@@ -1,25 +1,27 @@
-**🧠 Smart PDF Q&A Bot with Semantic Search & GPT**
+# 🧠 Smart PDF Q&A Bot with Semantic Search & GPT
 Upload any PDF and ask questions about its content using sentence embeddings for retrieval and GPT-3.5 for answers. Powered by FastAPI, Streamlit, and Docker.
 ________________________________________
-**🚀 Features**
+# 🚀 Features
 •	📄 Upload and read PDF documents
 •	✂️ Chunk long PDFs for better processing
 •	🔍 Retrieve semantically relevant chunks using MiniLM embeddings
 •	🤖 Ask questions and get GPT-3.5 answers based on context
 •	🧪 Streamlit UI + FastAPI backend
 •	🐳 Fully Dockerized for deployment
+____________________________________________________
+| Component        | Technology                     |
+| ---------------- | ------------------------------ |
+| Frontend         | Streamlit                      |
+| Backend          | FastAPI                        |
+| PDF Parser       | PyMuPDF (`fitz`)               |
+| Embeddings       | `sentence-transformers` MiniLM |
+| Similarity       | Cosine Similarity (`sklearn`)  |
+| LLM              | OpenAI GPT-3.5                 |
+| Containerization | Docker                         |
+_____________________________________________________
+
 ________________________________________
-**🧱 Tech Stack**
-1.Component	Technology
-2. Frontend	Streamlit
-3. Backend	FastAPI
- PDF Parser	PyMuPDF (fitz)
- Embeddings	sentence-transformers MiniLM
- Similarity	Cosine Similarity (sklearn)
- LLM	OpenAI GPT-3.5
- Containerization	Docker
-________________________________________
-**📁 Project Structure**
+# 📁 Project Structure
 .
 ├── app.py            # Streamlit frontend
 ├── main.py           # FastAPI backend
@@ -27,7 +29,7 @@ ________________________________________
 ├── requirements.txt  # Python dependencies
 └── README.md
 ________________________________________
-**🔧 Local Installation (Without Docker)**
+# 🔧 Local Installation (Without Docker)
 1. Clone the repo
 
 git clone https://github.com/your-username/smart-pdf-qa-bot.git
@@ -43,13 +45,13 @@ pip install -r requirements.txt
 
 4. Run the app
 
-# Run FastAPI
+## Run FastAPI
 uvicorn main:app --reload
 
-# In another terminal, run Streamlit
+## In another terminal, run Streamlit
 streamlit run app.py
 ________________________________________
-**🐳 Docker Deployment (Recommended)**
+# 🐳 Docker Deployment (Recommended)
 1. Build the Docker image
 docker build -t pdf-qa-bot .
 
@@ -58,7 +60,7 @@ docker run -p 8000:8000 -p 8501:8501 pdf-qa-bot
 •	📍 Access FastAPI docs at: http://localhost:8000/docs
 •	📍 Access the Streamlit app at: http://localhost:8501
 ________________________________________
-**📌 Notes**
+# 📌 Notes
 •	You must provide your OpenAI API key in the UI after uploading the PDF.
 •	The app selects top-3 semantically similar chunks before calling GPT.
 •	Make sure your OpenAI key has sufficient credits.
