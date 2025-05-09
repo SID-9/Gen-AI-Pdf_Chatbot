@@ -50,11 +50,11 @@ docker build -t pdf-qa-bot .
 
 2. Run the container
 docker run -p 8000:8000 -p 8501:8501 pdf-qa-bot
-•	📍 Access FastAPI docs at: http://localhost:8000/docs
-•	📍 Access the Streamlit app at: http://localhost:8501
+-	📍 Access FastAPI docs at: http://localhost:8000/docs
+-	📍 Access the Streamlit app at: http://localhost:8501
 ________________________________________
 # 📌 Notes
-•	You must provide your OpenAI API key in the UI after uploading the PDF.
-•	The app selects top-3 semantically similar chunks before calling GPT.
-•	Make sure your OpenAI key has sufficient credits.
+- 	You must provide your OpenAI API key in the UI after uploading the PDF.
+- The app selects top-3 semantically similar chunks before calling GPT.
+- Make sure your OpenAI key has sufficient credits.
 
