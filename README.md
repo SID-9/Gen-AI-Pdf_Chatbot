@@ -10,14 +10,14 @@ ________________________________________
 •	🐳 Fully Dockerized for deployment
 ________________________________________
 **🧱 Tech Stack**
-## Component	Technology
-## Frontend	Streamlit
-## Backend	FastAPI
-## PDF Parser	PyMuPDF (fitz)
-## Embeddings	sentence-transformers MiniLM
-## Similarity	Cosine Similarity (sklearn)
-## LLM	OpenAI GPT-3.5
-## Containerization	Docker
+1.Component	Technology
+2. Frontend	Streamlit
+3. Backend	FastAPI
+ PDF Parser	PyMuPDF (fitz)
+ Embeddings	sentence-transformers MiniLM
+ Similarity	Cosine Similarity (sklearn)
+ LLM	OpenAI GPT-3.5
+ Containerization	Docker
 ________________________________________
 **📁 Project Structure**
 .
