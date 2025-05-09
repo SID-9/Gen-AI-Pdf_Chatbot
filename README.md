@@ -21,15 +21,6 @@ ____________________________________________________
 | LLM              | OpenAI GPT-3.5                 |
 | Containerization | Docker                         |
 _____________________________________________________
-
-________________________________________
-# 📁 Project Structure
-.
-├── app.py            # Streamlit frontend
-├── main.py           # FastAPI backend
-├── Dockerfile        # Docker container config
-├── requirements.txt  # Python dependencies
-└── README.md
 ________________________________________
 # 🔧 Local Installation (Without Docker)
 1. Clone the repo
