@@ -1,63 +1,65 @@
-# 📝 AI-Based PDF Chatbot
+**🧠 Smart PDF Q&A Bot with Semantic Search & GPT**
+Upload any PDF and ask questions about its content using sentence embeddings for retrieval and GPT-3.5 for answers. Powered by FastAPI, Streamlit, and Docker.
+________________________________________
+**🚀 Features**
+•	📄 Upload and read PDF documents
+•	✂️ Chunk long PDFs for better processing
+•	🔍 Retrieve semantically relevant chunks using MiniLM embeddings
+•	🤖 Ask questions and get GPT-3.5 answers based on context
+•	🧪 Streamlit UI + FastAPI backend
+•	🐳 Fully Dockerized for deployment
+________________________________________
+**🧱 Tech Stack**
+Component	Technology
+Frontend	Streamlit
+Backend	FastAPI
+PDF Parser	PyMuPDF (fitz)
+Embeddings	sentence-transformers MiniLM
+Similarity	Cosine Similarity (sklearn)
+LLM	OpenAI GPT-3.5
+Containerization	Docker
+________________________________________
+**📁 Project Structure**
+.
+├── app.py            # Streamlit frontend
+├── main.py           # FastAPI backend
+├── Dockerfile        # Docker container config
+├── requirements.txt  # Python dependencies
+└── README.md
+________________________________________
+**🔧 Local Installation (Without Docker)**
+1. Clone the repo
 
-## 📌 Overview
-This project is an **AI-powered chatbot** that can **answer questions** based on the content of uploaded PDFs. It uses **LLaMA 2, FAISS, and LangChain** to implement **Retrieval-Augmented Generation (RAG)** for document-based Q&A. The chatbot works **fully offline and locally**, ensuring privacy and no API costs!
+git clone https://github.com/your-username/smart-pdf-qa-bot.git
+cd smart-pdf-qa-bot
 
-## 🚀 Features
-- 📄 Upload PDF documents
-- 🔎 Ask questions about the PDF content
-- 🤖 Uses **LLaMA 2 (via Ollama) for local inference**
-- ⚡ Efficient search with **FAISS Vector Store**
-- 🛠️ Built with **LangChain** for easy integration
-- 🎨 Simple **Gradio UI** for interaction
+2. Create a virtual environment
 
-## 🛠️ Installation & Setup
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-### 1️⃣ Prerequisites
-Ensure you have the following installed:
-- **Python 3.8+**
-- **Pip** (Package Manager)
-- **Ollama** (For running LLaMA 2 locally) → [Download Ollama](https://ollama.com/download)
+3. Install dependencies
+pip install -r requirements.txt
 
-### 2️⃣ Install Dependencies
-```sh
-pip install faiss-cpu pypdf2 gradio langchain sentence-transformers
-```
+4. Run the app
 
-### 3️⃣ Download LLaMA 2
-```sh
-ollama pull llama2
-```
+# Run FastAPI
+uvicorn main:app --reload
 
-## 🏃 Running the Chatbot
-Run the following command:
-```sh
-python pdf_chatbot.py
-```
-This will launch the chatbot UI in your browser.
+# In another terminal, run Streamlit
+streamlit run app.py
+________________________________________
+**🐳 Docker Deployment (Recommended)**
+1. Build the Docker image
+docker build -t pdf-qa-bot .
 
-## 🧠 How It Works
-1. 📂 **Upload a PDF** → The text is extracted and split into chunks.
-2. 🔢 **Generate Embeddings** → Sentence embeddings are created using **Sentence Transformers**.
-3. 📚 **Store in FAISS** → The text chunks are stored in **FAISS Vector Store** for quick retrieval.
-4. 🤖 **Retrieve & Generate Answer** → When a user asks a question, relevant chunks are retrieved and passed to **LLaMA 2** for response generation.
-
-## 🖥️ Tech Stack
-- **LLaMA 2** (via Ollama) → Local LLM inference
-- **LangChain** → Document processing & RAG
-- **FAISS** → Vector search for document retrieval
-- **Sentence Transformers** → Text embedding generation
-- **PyPDF2** → PDF text extraction
-- **Gradio** → UI for easy interaction
-
-## 📸 Screenshot
-<img width="959" alt="3" src="https://github.com/user-attachments/assets/96b3d9e8-8b8d-4064-8e6f-6eb0fd7bf7af" />
-
-
-## 📬 Contact
-If you have any questions or suggestions, feel free to reach out!
-
----
-🚀 **Happy Coding!** 🎉
-
+2. Run the container
+docker run -p 8000:8000 -p 8501:8501 pdf-qa-bot
+•	📍 Access FastAPI docs at: http://localhost:8000/docs
+•	📍 Access the Streamlit app at: http://localhost:8501
+________________________________________
+**📌 Notes**
+•	You must provide your OpenAI API key in the UI after uploading the PDF.
+•	The app selects top-3 semantically similar chunks before calling GPT.
+•	Make sure your OpenAI key has sufficient credits.
 
