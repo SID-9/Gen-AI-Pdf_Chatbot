@@ -2,12 +2,14 @@
 Upload any PDF and ask questions about its content using sentence embeddings for retrieval and GPT-3.5 for answers. Powered by FastAPI, Streamlit, and Docker.
 ________________________________________
 # 🚀 Features
-•	📄 Upload and read PDF documents
-•	✂️ Chunk long PDFs for better processing
-•	🔍 Retrieve semantically relevant chunks using MiniLM embeddings
-•	🤖 Ask questions and get GPT-3.5 answers based on context
-•	🧪 Streamlit UI + FastAPI backend
-•	🐳 Fully Dockerized for deployment
+📄 Upload and read PDF documents
+✂️ Chunk long PDFs for better processing
+🔍 Retrieve semantically relevant chunks using MiniLM embeddings
+🤖 Ask questions and get GPT-3.5 answers based on context
+🧪 Streamlit UI + FastAPI backend
+🐳 Fully Dockerized for deployment
+
+_______________________________________
 ____________________________________________________
 | Component        | Technology                     |
 | ---------------- | ------------------------------ |
