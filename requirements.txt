@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+streamlit
+requests
+python-multipart
+pydantic
+openai
+PyMuPDF
+sentence-transformers
+scikit-learn
